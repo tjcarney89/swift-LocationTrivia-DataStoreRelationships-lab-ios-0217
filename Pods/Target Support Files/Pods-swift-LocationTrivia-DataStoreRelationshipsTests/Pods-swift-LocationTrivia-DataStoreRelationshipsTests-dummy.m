@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_swift_LocationTrivia_DataStoreRelationshipsTests : NSObject
+@end
+@implementation PodsDummy_Pods_swift_LocationTrivia_DataStoreRelationshipsTests
+@end
