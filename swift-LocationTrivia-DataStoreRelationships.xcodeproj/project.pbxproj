@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B444E2A1D21B70500B1F9E3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B444E291D21B70500B1F9E3 /* Location.swift */; };
+		1B444E2C1D21B71800B1F9E3 /* Trivium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B444E2B1D21B71800B1F9E3 /* Trivium.swift */; };
 		1BE62AB51D21712300096C0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE62AB41D21712300096C0E /* AppDelegate.swift */; };
 		1BE62AB71D21712300096C0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE62AB61D21712300096C0E /* ViewController.swift */; };
 		1BE62ABA1D21712300096C0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BE62AB81D21712300096C0E /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		03E1AF6A3AE4BFB81E39E9F7 /* Pods_swift_LocationTrivia_DataStoreRelationshipsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_LocationTrivia_DataStoreRelationshipsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B444E291D21B70500B1F9E3 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1B444E2B1D21B71800B1F9E3 /* Trivium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trivium.swift; sourceTree = "<group>"; };
 		1BE62AB11D21712300096C0E /* swift-LocationTrivia-DataStoreRelationships.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-LocationTrivia-DataStoreRelationships.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE62AB41D21712300096C0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BE62AB61D21712300096C0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				1BE62AB41D21712300096C0E /* AppDelegate.swift */,
 				1BE62AB61D21712300096C0E /* ViewController.swift */,
 				1BE62AB81D21712300096C0E /* Main.storyboard */,
+				1B444E291D21B70500B1F9E3 /* Location.swift */,
+				1B444E2B1D21B71800B1F9E3 /* Trivium.swift */,
 				1BE62ABB1D21712300096C0E /* Assets.xcassets */,
 				1BE62ABD1D21712300096C0E /* LaunchScreen.storyboard */,
 				1BE62AC01D21712300096C0E /* Info.plist */,
@@ -184,6 +190,7 @@
 				TargetAttributes = {
 					1BE62AB01D21712300096C0E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = KXY9EDFTF5;
 					};
 					1BE62AC41D21712300096C0E = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -328,6 +335,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B444E2A1D21B70500B1F9E3 /* Location.swift in Sources */,
+				1B444E2C1D21B71800B1F9E3 /* Trivium.swift in Sources */,
 				1BE62AB71D21712300096C0E /* ViewController.swift in Sources */,
 				1BE62AB51D21712300096C0E /* AppDelegate.swift in Sources */,
 			);
@@ -461,10 +470,13 @@
 			baseConfigurationReference = D68FBADD09766ACB5EBB9307 /* Pods-swift-LocationTrivia-DataStoreRelationships.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "swift-LocationTrivia-DataStoreRelationships/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FIS.swift-LocationTrivia-DataStoreRelationships";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -473,10 +485,13 @@
 			baseConfigurationReference = B1A10054966B5A82C11BF252 /* Pods-swift-LocationTrivia-DataStoreRelationships.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "swift-LocationTrivia-DataStoreRelationships/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FIS.swift-LocationTrivia-DataStoreRelationships";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
