@@ -13,6 +13,8 @@ From time to time, we may want one instance of a class (and whatever data it hol
 
 The `dispatch_once` function from Grand Central Dispatch (GCD) is what permits this behavior. It's kind of like a punch card that reads 'admit one.' It retains all of its identifying information, but won't permit the application to run the block argument more than once. In the current case, that means only instantiating the shared instance one time. The code that Apple provides for creating such a shared instance is this somewhat cryptic set of code: 
 
+This is how shared instances are instantiated in Objective-C:
+
 ```objc
 + (instancetype)shared<#name#> {
     static <#class#> *_shared<#name#> = nil;
@@ -25,9 +27,19 @@ The `dispatch_once` function from Grand Central Dispatch (GCD) is what permits t
 }
 ```
 
+Here's how shared instances are instantiated in Swift:
+
+```swift
+class YourClassName {
+    static let sharedInstance = YourClassName()
+    private init() {} //This prevents others from using the default '()' initializer for this class.
+}
+```
+**Isn't it so much nicer???**
+
 In the scope of this lab we're going to call this class `FISLocationsDataStore` meaning we need to fill out the placeholders in this provided code as follows:
 
-```objc
+```swift
 + (instancetype)sharedLocationsDataStore {
     static FISLocationsDataStore *_sharedLocationsDataStore = nil;
     static dispatch_once_t onceToken;
@@ -41,13 +53,13 @@ In the scope of this lab we're going to call this class `FISLocationsDataStore` 
 
 You'll notice that it's calling a standard `init` on the class, so we'll need to customize that. Since we want our data store to hold our `FISLocation` objects, let's give it a property that's an `NSMutableArray` called 'locations' and instantiate it in the initializer.
 
-```objc
+```swift
 // FISLocationsDataStore.h
 
 @property (strong, nonatomic) NSMutableArray *locations;
 ```
 
-```objc
+```swift
 // FISLocationsDataStore.m
 
 - (instancetype)init
@@ -62,7 +74,7 @@ You'll notice that it's calling a standard `init` on the class, so we'll need to
 
 Now that we have our singleton class set up, we can access it from any view controller by calling the `shared<#name#>` method that we previously set up.
 
-```objc
+```swift
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
@@ -108,7 +120,7 @@ This next lab already has these steps set up for you. Take a moment to look over
 
 #### Starting Data
 
-```objc
+```swift
 - (void)generateStartingLocationsData {
     FISLocation *empireState = [[FISLocation alloc] initWithName:@"The Empire State Building"
                                                         latitude:40.7484
