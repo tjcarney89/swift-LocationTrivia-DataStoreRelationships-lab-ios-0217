@@ -8,11 +8,11 @@
 
 import Foundation
 
-class LocationsDataStore {
+final class LocationsDataStore {
     static let sharedInstance = LocationsDataStore()
     private init() {}
     
-    var locations: Array<Location> = []
+    var locations: [Location] = []
     
     func generateStartingLocationsData() {
         

@@ -13,37 +13,25 @@ From time to time, we may want one instance of a class (and whatever data it hol
 
 The `dispatch_once` function from Grand Central Dispatch (GCD) is what permits this behavior. It's kind of like a punch card that reads 'admit one.' It retains all of its identifying information, but won't permit the application to run the block argument more than once. In the current case, that means only instantiating the shared instance one time. If we were to take the Objective-C code for creating a singleton and translate it to Swift, it would look like this:
 
-```swift
-class DataStore {
-    class var sharedInstance: DataStore {
-        struct Static {
-            static var onceToken: dispatch_once_t = 0
-            static var instance: DataStore? = nil
-        }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = DataStore()
-        }
-        return Static.instance!
-    }
-}
-```
-
-However, this method is excessively verbose and ultimately unnecessary. In fact, *you should never use the code above*. Instead, use the following to create a shared instance in Swift:
+Use the following code to create a shared instance in Swift:
 
 ```swift
-class DataStore {
+final class DataStore {
     static let sharedInstance = DataStore()
     private init() {}
 }
 ```
 
-Isn't that so much nicer? Let's break the code down to see what's happening.
+Here we create a new class called `DataStore`. By marking the class as `final`, we ensure it can't be modified or subclassed. Next, we create a constant called `sharedInstance` and assign it an instance of `DataStore`. The `()` following `DataStore` automatically calls the initializer on the following line. Setting `sharedInstance` as `static` prevents its methods from being overridden. Declaring it as a constant by using `let` guarantees that only this particular instance of `DataStore` will ever occupy `sharedInstance`.
 
-<you have to make sure your inits are private. This ensures your singletons are truly unique and prevents outside objects from creating their own instances of your class through virtue of access control. Since all objects come with a default public initializer in Swift, you need to override your `init` and make it private. This isn't too hard to do and still ensures our one line singleton is nice and pretty>
+When an instance of a class is created with `let`, its variable properties can still be changed, even though the instance itself is fixed.
 
-By initializing your `sharedInstance` as `static`, you prevent subclasses from overriding its method(?). By using `let`, you ensure that the `sharedInstance` cannot be overwritten. 
+The initializer for the singleton is set to `private` to prevent other objects from creating their own instances of the `DataStore` class. Without this `private init()`, our `DataStore` would automatically be provided with the default public initializer. The `private` access control limits the scope of this method so it can only be seen (and called) from within the `DataStore` class.
 
-The `private init() {}` prevents others from using the default initializer for this class and thus ensures only one instance is created. Note that we use the class name `Singleton` only for clarity's sake, but the class can have any name.
+Private hides the initializer so no one can call the initializer from outside this class
+Let on a class means the instance doen't change, but the properties can be changed
+Let on a struct means properties of that instance can't change
+
 
 In the scope of this lab we're going to call this class `LocationsDataStore` meaning we need to write out our data store as follows:
 
@@ -54,55 +42,24 @@ class LocationsDataStore {
 }
 ```
 
-```swift
-+ (instancetype)sharedLocationsDataStore {
-    static LocationsDataStore *_sharedLocationsDataStore = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedLocationsDataStore = [[LocationsDataStore alloc] init];
-    });
-
-    return _sharedLocationsDataStore;
-}
-```
-
-You'll notice that it's calling a standard `init` on the class, so we'll need to customize that. Since we want our data store to hold our `Location` objects, let's give it a property that's an `Array` called 'locations' and instantiate it in the initializer.
+Great! That's a singleton. But it's not very useful on its own. Since we want our data store to hold `Location` objects, let's add an `Array` property to our `LocationsDataStore` class.
 
 ```swift
-// LocationsDataStore.h
-
-@property (strong, nonatomic) NSMutableArray *locations;
+var locations: [Location] = []
 ```
+Remember that even though the `sharedInstance` we created can't be changed or swapped out for another instance, the properties on it can still be modified.
+
+Now that we have our data store class set up, we can access it from any view controller by calling the `LocationsDataStore` class and its `sharedInstance` property.
 
 ```swift
-// LocationsDataStore.m
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _locations = [[NSMutableArray alloc] init];
-    }
-    return self;
-}
+let singleton = LocationsDataStore.sharedInstance
 ```
 
-Now that we have our singleton class set up, we can access it from any view controller by calling the `shared<#name#>` method that we previously set up.
-
-```swift
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	
-    LocationsDataStore *locationsDataStore = 
-        [LocationsDataStore sharedLocationsDataStore];
-}
-```
-
-This next lab already has these steps set up for you. Take a moment to look over the data store's files to see how they're laid out, then solve the lab by connecting a new view controller to the data store.
+This lab already has these steps set up for you. Take a moment to look over the data store's files to see how they're laid out, then solve the lab by connecting a new view controller to the data store.
 
 ## Instructions
 
-1. The previously-used `Location` and `Trivium` data models have been provided for you. Set up the `LocationsDataStore` class to be a singleton class. It should have one property, an `NSMutableArray` called `locations`. Override the default initializer to populate the `locations` array with the starting data provided at the end of this readme in the `generateStartingLocationsData` method.
+1. The previously-used `Location` and `Trivium` data models have been provided for you. Set up the `LocationsDataStore` class to be a singleton class. It should have one property, an `Array` called `Locations`. Populate the `Locations` array with the starting data provided at the end of this readme in the `generateStartingLocationsData` method.
 
 2. Create a storyboard named `Main.storyboard`. Add a table view controller embedded in a navigation controller which is the initial view controller. This first table view controller should be connected to a class called `LocationsTableViewController`.
   * In `viewDidLoad`, set the `tableView` property's accessibility label & identifier to `@"Locations Table"` (this cannot be done in Interface Builder).
