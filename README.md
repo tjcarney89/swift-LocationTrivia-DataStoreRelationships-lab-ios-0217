@@ -9,35 +9,51 @@
 
 ## Review
 
-From time to time, we may want one instance of a class (and whatever data it holds onto) to be accessed by many other objects in your program. This is very useful for organizing your application's data into one place--hence the designation in this case of "Data Store." One way to accomplish this is with a **shared instance** of that class. A shared instance is typically accessed by a class method which creates only one instance over the lifetime of the application. Any and all calls to that class method return the one instance already instantiated. You'll often hear this referred to as a "singleton." 
+From time to time, we may want one instance of a class (and whatever data it holds onto) to be accessed by many other objects in your program. This is very useful for organizing your application's data into one place—hence the designation in this case of "Data Store." One way to accomplish this is with a **shared instance** of that class. A shared instance is typically accessed by a class method which creates only one instance over the lifetime of the application. Any and all calls to that class method return the one instance already instantiated. You'll often hear this referred to as a "singleton." 
 
-The `dispatch_once` function from Grand Central Dispatch (GCD) is what permits this behavior. It's kind of like a punch card that reads 'admit one.' It retains all of its identifying information, but won't permit the application to run the block argument more than once. In the current case, that means only instantiating the shared instance one time. The code that Apple provides for creating such a shared instance is this somewhat cryptic set of code: 
-
-This is how shared instances are instantiated in Objective-C:
-
-```objc
-+ (instancetype)shared<#name#> {
-    static <#class#> *_shared<#name#> = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _shared<#name#> = <#initializer#>;
-    });
-
-    return _shared<#name#>;
-}
-```
-
-Here's how shared instances are instantiated in Swift:
+The `dispatch_once` function from Grand Central Dispatch (GCD) is what permits this behavior. It's kind of like a punch card that reads 'admit one.' It retains all of its identifying information, but won't permit the application to run the block argument more than once. In the current case, that means only instantiating the shared instance one time. If we were to take the Objective-C code for creating a singleton and translate it to Swift, it would look like this:
 
 ```swift
-class YourClassName {
-    static let sharedInstance = YourClassName()
-    private init() {} //This prevents others from using the default '()' initializer for this class.
+class Singleton {
+    class var sharedInstance: Singleton {
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var instance: Singleton? = nil
+        }
+        dispatch_once(&Static.onceToken) {
+            Static.instance = Singleton()
+        }
+        return Static.instance!
+    }
 }
 ```
-**Isn't it so much nicer???**
 
-In the scope of this lab we're going to call this class `FISLocationsDataStore` meaning we need to fill out the placeholders in this provided code as follows:
+However, this method is excessively verbose and ultimately unnecessary. In fact, you should never use the code above. Instead, use the following code to create a shared instance in Swift:
+
+```swift
+class Singleton {
+    static let sharedInstance = Singleton()
+    private init() {}
+}
+```
+
+Isn't that so much nicer? Let's break the code down to see what's happening.
+
+<you have to make sure that your inits are private. This makes sure your singletons are truly unique and prevents outside objects from creating their own instances of your class through virtue of access control. Since all objects come with a default public initializer in Swift, you need to override your init and make it private. This isn't too hard to do and still ensures our one line singleton is nice and pretty>
+
+By initializing your `sharedInstance` as `static`, you prevent subclasses from overriding its method(?). By using `let`, you ensure that the `sharedInstance` cannot be overwritten. 
+
+The `private init() {}` prevents others from using the default initializer for this class and thus ensures only one instance is created. Note that we use the class name `Singleton` only for clarity's sake, but the class can have any name.
+
+In the scope of this lab we're going to call this class `LocationsDataStore` meaning we need to write out our data store as follows:
+
+```swift
+class LocationsDataStore {
+    static let sharedInstance = LocationsDataStore()
+    var locations : [Location] = []
+    private init() {}
+}
+```
 
 ```swift
 + (instancetype)sharedLocationsDataStore {
@@ -51,7 +67,7 @@ In the scope of this lab we're going to call this class `FISLocationsDataStore` 
 }
 ```
 
-You'll notice that it's calling a standard `init` on the class, so we'll need to customize that. Since we want our data store to hold our `FISLocation` objects, let's give it a property that's an `NSMutableArray` called 'locations' and instantiate it in the initializer.
+You'll notice that it's calling a standard `init` on the class, so we'll need to customize that. Since we want our data store to hold our `Location` objects, let's give it a property that's an `Array` called 'locations' and instantiate it in the initializer.
 
 ```swift
 // FISLocationsDataStore.h
