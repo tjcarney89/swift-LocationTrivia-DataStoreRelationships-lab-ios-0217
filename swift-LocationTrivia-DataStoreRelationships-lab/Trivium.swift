@@ -1,6 +1,6 @@
 //
 //  Trivium.swift
-//  swift-LocationTrivia-DataStoreRelationships
+//  swift-LocationTrivia-DataStoreRelationships-lab
 //
 //  Created by Flatiron School on 6/27/16.
 //  Copyright © 2016 Flatiron School. All rights reserved.

@@ -1,15 +1,15 @@
 //
-//  swift_LocationTrivia_DataStoreRelationshipsTests.swift
-//  swift-LocationTrivia-DataStoreRelationshipsTests
+//  swift_LocationTrivia_DataStoreRelationships_labTests.swift
+//  swift-LocationTrivia-DataStoreRelationships-labTests
 //
-//  Created by Flatiron School on 6/27/16.
+//  Created by Flatiron School on 6/30/16.
 //  Copyright © 2016 Flatiron School. All rights reserved.
 //
 
 import XCTest
-@testable import swift_LocationTrivia_DataStoreRelationships
+@testable import swift_LocationTrivia_DataStoreRelationships_lab
 
-class swift_LocationTrivia_DataStoreRelationshipsTests: XCTestCase {
+class swift_LocationTrivia_DataStoreRelationships_labTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

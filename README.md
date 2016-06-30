@@ -14,32 +14,32 @@ From time to time, we may want one instance of a class (and whatever data it hol
 The `dispatch_once` function from Grand Central Dispatch (GCD) is what permits this behavior. It's kind of like a punch card that reads 'admit one.' It retains all of its identifying information, but won't permit the application to run the block argument more than once. In the current case, that means only instantiating the shared instance one time. If we were to take the Objective-C code for creating a singleton and translate it to Swift, it would look like this:
 
 ```swift
-class Singleton {
-    class var sharedInstance: Singleton {
+class DataStore {
+    class var sharedInstance: DataStore {
         struct Static {
             static var onceToken: dispatch_once_t = 0
-            static var instance: Singleton? = nil
+            static var instance: DataStore? = nil
         }
         dispatch_once(&Static.onceToken) {
-            Static.instance = Singleton()
+            Static.instance = DataStore()
         }
         return Static.instance!
     }
 }
 ```
 
-However, this method is excessively verbose and ultimately unnecessary. In fact, you should never use the code above. Instead, use the following code to create a shared instance in Swift:
+However, this method is excessively verbose and ultimately unnecessary. In fact, *you should never use the code above*. Instead, use the following to create a shared instance in Swift:
 
 ```swift
-class Singleton {
-    static let sharedInstance = Singleton()
+class DataStore {
+    static let sharedInstance = DataStore()
     private init() {}
 }
 ```
 
 Isn't that so much nicer? Let's break the code down to see what's happening.
 
-<you have to make sure that your inits are private. This makes sure your singletons are truly unique and prevents outside objects from creating their own instances of your class through virtue of access control. Since all objects come with a default public initializer in Swift, you need to override your init and make it private. This isn't too hard to do and still ensures our one line singleton is nice and pretty>
+<you have to make sure your inits are private. This ensures your singletons are truly unique and prevents outside objects from creating their own instances of your class through virtue of access control. Since all objects come with a default public initializer in Swift, you need to override your `init` and make it private. This isn't too hard to do and still ensures our one line singleton is nice and pretty>
 
 By initializing your `sharedInstance` as `static`, you prevent subclasses from overriding its method(?). By using `let`, you ensure that the `sharedInstance` cannot be overwritten. 
 
@@ -50,17 +50,16 @@ In the scope of this lab we're going to call this class `LocationsDataStore` mea
 ```swift
 class LocationsDataStore {
     static let sharedInstance = LocationsDataStore()
-    var locations : [Location] = []
     private init() {}
 }
 ```
 
 ```swift
 + (instancetype)sharedLocationsDataStore {
-    static FISLocationsDataStore *_sharedLocationsDataStore = nil;
+    static LocationsDataStore *_sharedLocationsDataStore = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedLocationsDataStore = [[FISLocationsDataStore alloc] init];
+        _sharedLocationsDataStore = [[LocationsDataStore alloc] init];
     });
 
     return _sharedLocationsDataStore;
@@ -70,13 +69,13 @@ class LocationsDataStore {
 You'll notice that it's calling a standard `init` on the class, so we'll need to customize that. Since we want our data store to hold our `Location` objects, let's give it a property that's an `Array` called 'locations' and instantiate it in the initializer.
 
 ```swift
-// FISLocationsDataStore.h
+// LocationsDataStore.h
 
 @property (strong, nonatomic) NSMutableArray *locations;
 ```
 
 ```swift
-// FISLocationsDataStore.m
+// LocationsDataStore.m
 
 - (instancetype)init
 {
@@ -94,8 +93,8 @@ Now that we have our singleton class set up, we can access it from any view cont
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-    FISLocationsDataStore *locationsDataStore = 
-        [FISLocationsDataStore sharedLocationsDataStore];
+    LocationsDataStore *locationsDataStore = 
+        [LocationsDataStore sharedLocationsDataStore];
 }
 ```
 
@@ -103,70 +102,60 @@ This next lab already has these steps set up for you. Take a moment to look over
 
 ## Instructions
 
-1. The previously-used `FISLocation` and `FISTrivium` data models have been provided for you. Set up the `FISLocationsDataStore` class to be a singleton class. It should have one property, an `NSMutableArray` called `locations`. Override the default initializer to populate the `locations` array with the starting data provided at the end of this readme in the `generateStartingLocationsData` method.
+1. The previously-used `Location` and `Trivium` data models have been provided for you. Set up the `LocationsDataStore` class to be a singleton class. It should have one property, an `NSMutableArray` called `locations`. Override the default initializer to populate the `locations` array with the starting data provided at the end of this readme in the `generateStartingLocationsData` method.
 
-2. Create a storyboard named `Main.storyboard`. Add a table view controller embedded in a navigation controller which is the initial view controller. This first table view controller should be connected to a class called `FISLocationsTableViewController`.
+2. Create a storyboard named `Main.storyboard`. Add a table view controller embedded in a navigation controller which is the initial view controller. This first table view controller should be connected to a class called `LocationsTableViewController`.
   * In `viewDidLoad`, set the `tableView` property's accessibility label & identifier to `@"Locations Table"` (this cannot be done in Interface Builder).
-  * Give the table view controller a `FISLocationsDataStore` property called `store` and use the "shared instance" method to instantiate it.
+  * Give the table view controller a `LocationsDataStore` property called `store` and use the "shared instance" method to instantiate it.
   * In storyboard, set the table view's prototype cell type to "right detail". Have the table view use the `textLabel` to show the name of the locations, and the `detailTextLabel` to display the number of trivia it has associated with it.
 
-3. Add a second table view controller named `FISTriviaTableViewController` accessed by a show segue from a table view cell in the locations table view controller. In `viewDidLoad`, set the `tableView`'s accessibility label & identifier to `@"Trivia Table"`.
-  * Give the view controller a `FISLocation` property called `location`, which should be set with the relevant `FISLocation` object in `FISLocationsTableViewController`'s `prepareForSegue:sender:` method.
-  * Use the `location` property's `trivia` array to load the table view. Each cell should display the `FISTrivium` object's "content" in the `textLabel`, and the number of "likes" in the `detailTextLabel`.
+3. Add a second table view controller named `TriviaTableViewController` accessed by a show segue from a table view cell in the locations table view controller. In `viewDidLoad`, set the `tableView`'s accessibility label & identifier to `@"Trivia Table"`.
+  * Give the view controller a `Location` property called `location`, which should be set with the relevant `Location` object in `LocationsTableViewController`'s `prepareForSegue:sender:` method.
+  * Use the `location` property's `trivia` array to load the table view. Each cell should display the `Trivium` object's "content" in the `textLabel`, and the number of "likes" in the `detailTextLabel`.
 
-4. Create a new view controller named `FISAddLocationViewController` that will be presented modally from the locations table view controller. 
+4. Create a new view controller named `AddLocationViewController` that will be presented modally from the locations table view controller. 
   * Add three text fields for the name, latitude, and longitude. Set their accessibility labels & identifiers to `@"nameField"`, `@"latitudeField`, and `@"longitudeField"` respectively.
   * Add two buttons, one to "cancel" adding a location, and one to "save" a new location with the information entered in the text fields. Set their accessibility labels & identifiers to `@"cancelButton"` and `@"saveButton"` respectively.
   * When the "cancel" button is tapped, dismiss the view controller.
-  * When the "submit" button is tapped, use the information in the text fields to create new a instance of `FISLocation` and add it the the data store's `locations` array. Then dismiss the view controller.
+  * When the "submit" button is tapped, use the information in the text fields to create new a instance of `Location` and add it the the data store's `locations` array. Then dismiss the view controller.
 
-5. To access this new view controller, add a bar button item to the navigation bar in the location table view's storyboard canvas. Set the style to "add" so it shows a `+` sign. In the `FISLocationsTableViewController`'s `viewDidLoad` method, set this new button's accessibility label & identifier to `@"addButton"`. You can access it as a property via `self.navigationItem.rightBarButtonItem` and set the string properties from there.
-  * Create a modal segue between this add button and the `FISAddLocationViewController`. Now that you have two segues, you'll need to detect which segue has been activated in the `prepareForSegue:` method — only one of the destination view controllers has a `location` property that can be set.
+5. To access this new view controller, add a bar button item to the navigation bar in the location table view's storyboard canvas. Set the style to "add" so it shows a `+` sign. In the `LocationsTableViewController`'s `viewDidLoad` method, set this new button's accessibility label & identifier to `@"addButton"`. You can access it as a property via `self.navigationItem.rightBarButtonItem` and set the string properties from there.
+  * Create a modal segue between this add button and the `AddLocationViewController`. Now that you have two segues, you'll need to detect which segue has been activated in the `prepareForSegue:` method — only one of the destination view controllers has a `location` property that can be set.
 
 6. Use the iOS Simulator to test your add-location view controller. You may notice that the new location doesn't appear in the locations table view, even though the data has been added. How can you get the table view to reload itself?
 
-7. Create another view controller named `FISAddTriviaTableViewController` to be presented modally from the the trivia table view controller. It will need one text field, a cancel button, and a save button. Set their accessibility labels & identifiers to `@"Trivium Text Field"`, `@"Cancel Button"`, and `@"Save Button"` respectively.
+7. Create another view controller named `AddTriviaTableViewController` to be presented modally from the the trivia table view controller. It will need one text field, a cancel button, and a save button. Set their accessibility labels & identifiers to `@"Trivium Text Field"`, `@"Cancel Button"`, and `@"Save Button"` respectively.
   * When the cancel button is tapped, dismiss the view controller.
-  * When the submit button is tapped, add use the text field to create a new `FISTrivium` object with zero likes. Add the this new trivium to the relevant `FISLocation` object that was passed to the `FISTriviaTableViewController`. Then dismiss the view controller.
+  * When the submit button is tapped, add use the text field to create a new `Trivium` object with zero likes. Add the this new trivium to the relevant `Location` object that was passed to the `TriviaTableViewController`. Then dismiss the view controller.
 
-8. To access this last view controller, add a bar button to the navigation bar in the trivia table view's storyboard canvas. Set the style to "add" so it shows a `+` sign. In the `FISTriviaTableViewController`'s `viewDidLoad` method, set this new button's accessibility label & identifier to `@"Add Trivia Button"`.  You can access this it as a property via `self.navigationItem.rightBarButtonItem` and set the string properties from there.
-  * Create a modal segue between the add button and the `FISAddTriviaViewController`.
+8. To access this last view controller, add a bar button to the navigation bar in the trivia table view's storyboard canvas. Set the style to "add" so it shows a `+` sign. In the `TriviaTableViewController`'s `viewDidLoad` method, set this new button's accessibility label & identifier to `@"Add Trivia Button"`.  You can access this it as a property via `self.navigationItem.rightBarButtonItem` and set the string properties from there.
+  * Create a modal segue between the add button and the `AddTriviaViewController`.
 
-9. Use the iOS Simulator to test your add-trivia view controller. Does the new trivium show up in the `FISTriviaTableViewController`?
+9. Use the iOS Simulator to test your add-trivia view controller. Does the new trivium show up in the `TriviaTableViewController`?
 
 #### Starting Data
 
 ```swift
-- (void)generateStartingLocationsData {
-    FISLocation *empireState = [[FISLocation alloc] initWithName:@"The Empire State Building"
-                                                        latitude:40.7484
-                                                       longitude:-73.9857];
+func generateStartingLocationsData() {
     
-    FISTrivium *trivium1A = [[FISTrivium alloc] initWithContent:@"1,454 Feet Tall" likes:4];
-    FISTrivium *trivium1B = [[FISTrivium alloc] initWithContent:@"Cost $24,718,000 to build" likes:2];
+    let empireState = Location.init(name: "The Empire State Building", latitude: 40.7484, longitude: -73.9857)
+    let trivium1A = Trivium.init(content: "1,454 Feet Tall", likes: 4)
+    let trivium1B = Trivium.init(content: "Cost $24,718,000 to build", likes: 2)
+    empireState.trivia.appendContentsOf([trivium1A, trivium1B])
     
-    [empireState.trivia addObjectsFromArray:@[trivium1A, trivium1B]];
+    let bowlingGreen = Location.init(name: "Bowling Green", latitude: 41.3739, longitude: -83.6508)
+    let trivium2A = Trivium.init(content: "NYC's oldest park", likes: 8)
+    let trivium2B = Trivium.init(content: "Made a park in 1733", likes: 2)
+    let trivium2C = Trivium.init(content: "Charging Bull was created in 1989", likes: 0)
+    bowlingGreen.trivia.appendContentsOf([trivium2A, trivium2B, trivium2C])
     
-    FISLocation *bowlingGreen = [[FISLocation alloc] initWithName:@"Bowling Green"
-                                                         latitude:41.3739
-                                                        longitude:-83.6508];
+    let ladyLiberty = Location.init(name: "Statue Of Liberty", latitude: 40.6892, longitude: -74.0444)
+    let trivium3A = Trivium.init(content: "Gift from France", likes: 6)
+    ladyLiberty.trivia.append(trivium3A)
     
-    FISTrivium *trivium2A = [[FISTrivium alloc] initWithContent:@"NYC's oldest park" likes:8];
-    FISTrivium *trivium2B = [[FISTrivium alloc] initWithContent:@"Made a park in 1733" likes:2];
-    FISTrivium *trivium2C = [[FISTrivium alloc] initWithContent:@"Charging Bull was created in 1989" likes:0];
-    
-    
-    [bowlingGreen.trivia addObjectsFromArray:@[trivium2A, trivium2B, trivium2C]];
-    
-    FISLocation *ladyLiberty = [[FISLocation alloc] initWithName:@"Statue Of Liberty"
-                                                        latitude:40.6892
-                                                       longitude:74.0444];
-    FISTrivium *trivium3A = [[FISTrivium alloc] initWithContent:@"Gift from the french" likes:6];
-    
-    [ladyLiberty.trivia addObjectsFromArray:@[trivium3A]];
-    
-    [self.locations addObjectsFromArray:@[bowlingGreen, empireState, ladyLiberty]];
-}```
+    self.locations.appendContentsOf([bowlingGreen, empireState, ladyLiberty])
+}
+```
 
 ## Advanced
 

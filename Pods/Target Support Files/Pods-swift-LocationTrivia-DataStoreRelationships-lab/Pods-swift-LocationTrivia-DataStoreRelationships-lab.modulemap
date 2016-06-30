@@ -1,0 +1,6 @@
+framework module Pods_swift_LocationTrivia_DataStoreRelationships_lab {
+  umbrella header "Pods-swift-LocationTrivia-DataStoreRelationships-lab-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B4006BA1D25974A008F814D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006B91D25974A008F814D /* AppDelegate.swift */; };
+		1B4006BC1D25974A008F814D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006BB1D25974A008F814D /* ViewController.swift */; };
+		1B4006BF1D25974A008F814D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4006BD1D25974A008F814D /* Main.storyboard */; };
+		1B4006C11D25974A008F814D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4006C01D25974A008F814D /* Assets.xcassets */; };
+		1B4006C41D25974A008F814D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4006C21D25974A008F814D /* LaunchScreen.storyboard */; };
+		1B4006CF1D25974A008F814D /* swift_LocationTrivia_DataStoreRelationships_labTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006CE1D25974A008F814D /* swift_LocationTrivia_DataStoreRelationships_labTests.swift */; };
+		1B4006DC1D259895008F814D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006D91D259895008F814D /* Location.swift */; };
+		1B4006DD1D259895008F814D /* LocationDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006DA1D259895008F814D /* LocationDataStore.swift */; };
+		1B4006DE1D259895008F814D /* Trivium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006DB1D259895008F814D /* Trivium.swift */; };
+		3D5B53CA8D7389813771FFB7 /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B377A86E7BBC03AEAE2C0FC /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework */; };
+		3E05099B8F7D5ACB7F89C014 /* Pods_swift_LocationTrivia_DataStoreRelationships_labTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599E9E96BAA8225332DF9C54 /* Pods_swift_LocationTrivia_DataStoreRelationships_labTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B4006CB1D25974A008F814D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B4006AE1D25974A008F814D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B4006B51D25974A008F814D;
+			remoteInfo = "swift-LocationTrivia-DataStoreRelationships-lab";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0CA98FEC4C1E7F3D4C9BC36A /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-LocationTrivia-DataStoreRelationships-lab.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-lab/Pods-swift-LocationTrivia-DataStoreRelationships-lab.release.xcconfig"; sourceTree = "<group>"; };
+		1B4006B61D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-LocationTrivia-DataStoreRelationships-lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4006B91D25974A008F814D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1B4006BB1D25974A008F814D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B4006BE1D25974A008F814D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B4006C01D25974A008F814D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B4006C31D25974A008F814D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B4006C51D25974A008F814D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B4006CA1D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-labTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-LocationTrivia-DataStoreRelationships-labTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4006CE1D25974A008F814D /* swift_LocationTrivia_DataStoreRelationships_labTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_LocationTrivia_DataStoreRelationships_labTests.swift; sourceTree = "<group>"; };
+		1B4006D01D25974A008F814D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B4006D91D259895008F814D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1B4006DA1D259895008F814D /* LocationDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataStore.swift; sourceTree = "<group>"; };
+		1B4006DB1D259895008F814D /* Trivium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trivium.swift; sourceTree = "<group>"; };
+		3B377A86E7BBC03AEAE2C0FC /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		487BFB0E7D07A094E0DBCAF6 /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-lab/Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig"; sourceTree = "<group>"; };
+		599E9E96BAA8225332DF9C54 /* Pods_swift_LocationTrivia_DataStoreRelationships_labTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_LocationTrivia_DataStoreRelationships_labTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBF2A74239F9CDF487676C51 /* Pods-swift-LocationTrivia-DataStoreRelationships-labTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-LocationTrivia-DataStoreRelationships-labTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-labTests/Pods-swift-LocationTrivia-DataStoreRelationships-labTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3D4DDC354B806EC3C13E31F /* Pods-swift-LocationTrivia-DataStoreRelationships-labTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-LocationTrivia-DataStoreRelationships-labTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-labTests/Pods-swift-LocationTrivia-DataStoreRelationships-labTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B4006B31D25974A008F814D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D5B53CA8D7389813771FFB7 /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B4006C71D25974A008F814D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E05099B8F7D5ACB7F89C014 /* Pods_swift_LocationTrivia_DataStoreRelationships_labTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B4006AD1D25974A008F814D = {
+			isa = PBXGroup;
+			children = (
+				1B4006B81D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-lab */,
+				1B4006CD1D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-labTests */,
+				1B4006B71D25974A008F814D /* Products */,
+				B7688ED93F973E8852849DA8 /* Pods */,
+				AD21407FFBBBED557B32E60C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1B4006B71D25974A008F814D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B4006B61D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-lab.app */,
+				1B4006CA1D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-labTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B4006B81D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-lab */ = {
+			isa = PBXGroup;
+			children = (
+				1B4006B91D25974A008F814D /* AppDelegate.swift */,
+				1B4006BB1D25974A008F814D /* ViewController.swift */,
+				1B4006D91D259895008F814D /* Location.swift */,
+				1B4006DB1D259895008F814D /* Trivium.swift */,
+				1B4006DA1D259895008F814D /* LocationDataStore.swift */,
+				1B4006BD1D25974A008F814D /* Main.storyboard */,
+				1B4006C01D25974A008F814D /* Assets.xcassets */,
+				1B4006C21D25974A008F814D /* LaunchScreen.storyboard */,
+				1B4006C51D25974A008F814D /* Info.plist */,
+			);
+			path = "swift-LocationTrivia-DataStoreRelationships-lab";
+			sourceTree = "<group>";
+		};
+		1B4006CD1D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-labTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B4006CE1D25974A008F814D /* swift_LocationTrivia_DataStoreRelationships_labTests.swift */,
+				1B4006D01D25974A008F814D /* Info.plist */,
+			);
+			path = "swift-LocationTrivia-DataStoreRelationships-labTests";
+			sourceTree = "<group>";
+		};
+		AD21407FFBBBED557B32E60C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B377A86E7BBC03AEAE2C0FC /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework */,
+				599E9E96BAA8225332DF9C54 /* Pods_swift_LocationTrivia_DataStoreRelationships_labTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7688ED93F973E8852849DA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				487BFB0E7D07A094E0DBCAF6 /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig */,
+				0CA98FEC4C1E7F3D4C9BC36A /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.release.xcconfig */,
+				BBF2A74239F9CDF487676C51 /* Pods-swift-LocationTrivia-DataStoreRelationships-labTests.debug.xcconfig */,
+				D3D4DDC354B806EC3C13E31F /* Pods-swift-LocationTrivia-DataStoreRelationships-labTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B4006B51D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-lab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B4006D31D25974A008F814D /* Build configuration list for PBXNativeTarget "swift-LocationTrivia-DataStoreRelationships-lab" */;
+			buildPhases = (
+				60B9D53F3CA30EBAFF26590D /* [CP] Check Pods Manifest.lock */,
+				1B4006B21D25974A008F814D /* Sources */,
+				1B4006B31D25974A008F814D /* Frameworks */,
+				1B4006B41D25974A008F814D /* Resources */,
+				A4A94352A7609080A6EA6E2F /* [CP] Embed Pods Frameworks */,
+				9EE5735E54E0396A97C95CA5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "swift-LocationTrivia-DataStoreRelationships-lab";
+			productName = "swift-LocationTrivia-DataStoreRelationships-lab";
+			productReference = 1B4006B61D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-lab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1B4006C91D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-labTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B4006D61D25974A008F814D /* Build configuration list for PBXNativeTarget "swift-LocationTrivia-DataStoreRelationships-labTests" */;
+			buildPhases = (
+				6922FD4BF71AA4CBEC65DD04 /* [CP] Check Pods Manifest.lock */,
+				1B4006C61D25974A008F814D /* Sources */,
+				1B4006C71D25974A008F814D /* Frameworks */,
+				1B4006C81D25974A008F814D /* Resources */,
+				60E797001DFB1457E0B6DEAC /* [CP] Embed Pods Frameworks */,
+				05BDBF98349F3DCBF77861BE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B4006CC1D25974A008F814D /* PBXTargetDependency */,
+			);
+			name = "swift-LocationTrivia-DataStoreRelationships-labTests";
+			productName = "swift-LocationTrivia-DataStoreRelationships-labTests";
+			productReference = 1B4006CA1D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-labTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B4006AE1D25974A008F814D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Flatiron School";
+				TargetAttributes = {
+					1B4006B51D25974A008F814D = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					1B4006C91D25974A008F814D = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1B4006B51D25974A008F814D;
+					};
+				};
+			};
+			buildConfigurationList = 1B4006B11D25974A008F814D /* Build configuration list for PBXProject "swift-LocationTrivia-DataStoreRelationships-lab" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B4006AD1D25974A008F814D;
+			productRefGroup = 1B4006B71D25974A008F814D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B4006B51D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-lab */,
+				1B4006C91D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-labTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B4006B41D25974A008F814D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4006C41D25974A008F814D /* LaunchScreen.storyboard in Resources */,
+				1B4006C11D25974A008F814D /* Assets.xcassets in Resources */,
+				1B4006BF1D25974A008F814D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B4006C81D25974A008F814D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05BDBF98349F3DCBF77861BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-labTests/Pods-swift-LocationTrivia-DataStoreRelationships-labTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60B9D53F3CA30EBAFF26590D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		60E797001DFB1457E0B6DEAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-labTests/Pods-swift-LocationTrivia-DataStoreRelationships-labTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6922FD4BF71AA4CBEC65DD04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9EE5735E54E0396A97C95CA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-lab/Pods-swift-LocationTrivia-DataStoreRelationships-lab-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4A94352A7609080A6EA6E2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-lab/Pods-swift-LocationTrivia-DataStoreRelationships-lab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B4006B21D25974A008F814D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4006BC1D25974A008F814D /* ViewController.swift in Sources */,
+				1B4006DE1D259895008F814D /* Trivium.swift in Sources */,
+				1B4006DC1D259895008F814D /* Location.swift in Sources */,
+				1B4006DD1D259895008F814D /* LocationDataStore.swift in Sources */,
+				1B4006BA1D25974A008F814D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B4006C61D25974A008F814D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B4006CF1D25974A008F814D /* swift_LocationTrivia_DataStoreRelationships_labTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B4006CC1D25974A008F814D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B4006B51D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-lab */;
+			targetProxy = 1B4006CB1D25974A008F814D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B4006BD1D25974A008F814D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B4006BE1D25974A008F814D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1B4006C21D25974A008F814D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B4006C31D25974A008F814D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B4006D11D25974A008F814D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B4006D21D25974A008F814D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B4006D41D25974A008F814D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 487BFB0E7D07A094E0DBCAF6 /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "swift-LocationTrivia-DataStoreRelationships-lab/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FIS.swift-LocationTrivia-DataStoreRelationships-lab";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1B4006D51D25974A008F814D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CA98FEC4C1E7F3D4C9BC36A /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "swift-LocationTrivia-DataStoreRelationships-lab/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FIS.swift-LocationTrivia-DataStoreRelationships-lab";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1B4006D71D25974A008F814D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBF2A74239F9CDF487676C51 /* Pods-swift-LocationTrivia-DataStoreRelationships-labTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "swift-LocationTrivia-DataStoreRelationships-labTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FIS.swift-LocationTrivia-DataStoreRelationships-labTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-LocationTrivia-DataStoreRelationships-lab.app/swift-LocationTrivia-DataStoreRelationships-lab";
+			};
+			name = Debug;
+		};
+		1B4006D81D25974A008F814D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3D4DDC354B806EC3C13E31F /* Pods-swift-LocationTrivia-DataStoreRelationships-labTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "swift-LocationTrivia-DataStoreRelationships-labTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FIS.swift-LocationTrivia-DataStoreRelationships-labTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-LocationTrivia-DataStoreRelationships-lab.app/swift-LocationTrivia-DataStoreRelationships-lab";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B4006B11D25974A008F814D /* Build configuration list for PBXProject "swift-LocationTrivia-DataStoreRelationships-lab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4006D11D25974A008F814D /* Debug */,
+				1B4006D21D25974A008F814D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B4006D31D25974A008F814D /* Build configuration list for PBXNativeTarget "swift-LocationTrivia-DataStoreRelationships-lab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4006D41D25974A008F814D /* Debug */,
+				1B4006D51D25974A008F814D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B4006D61D25974A008F814D /* Build configuration list for PBXNativeTarget "swift-LocationTrivia-DataStoreRelationships-labTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4006D71D25974A008F814D /* Debug */,
+				1B4006D81D25974A008F814D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B4006AE1D25974A008F814D /* Project object */;
+}
