@@ -9,9 +9,9 @@ def testing_pods
   pod 'Nimble'
 end
 
-target 'swift-LocationTrivia-DataStoreRelationships' do
+target 'swift-LocationTrivia-DataStoreRelationships-lab' do
 end
 
-target 'swift-LocationTrivia-DataStoreRelationshipsTests' do
+target 'swift-LocationTrivia-DataStoreRelationships-labTests' do
   testing_pods
 end
