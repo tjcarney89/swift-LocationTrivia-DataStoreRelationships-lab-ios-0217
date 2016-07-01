@@ -28,11 +28,6 @@ When an instance of a class is created with `let`, its variable properties can s
 
 The initializer for the singleton is set to `private` to prevent other objects from creating their own instances of the `DataStore` class. Without this `private init()`, our `DataStore` would automatically be provided with the default public initializer. The `private` access control limits the scope of this method so it can only be seen (and called) from within the `DataStore` class.
 
-Private hides the initializer so no one can call the initializer from outside this class
-Let on a class means the instance doen't change, but the properties can be changed
-Let on a struct means properties of that instance can't change
-
-
 In the scope of this lab we're going to call this class `LocationsDataStore` meaning we need to write out our data store as follows:
 
 ```swift
@@ -47,7 +42,7 @@ Great! That's a singleton. But it's not very useful on its own. Since we want ou
 ```swift
 var locations: [Location] = []
 ```
-Remember that even though the `sharedInstance` we created can't be changed or swapped out for another instance, the properties on it can still be modified.
+Remember that even though the `sharedInstance` we created can't be changed or swapped out for another instance, the values of the properties on it can still be modified.
 
 Now that we have our data store class set up, we can access it from any view controller by calling the `LocationsDataStore` class and its `sharedInstance` property.
 
@@ -63,29 +58,29 @@ This lab already has these steps set up for you. Take a moment to look over the 
 
 2. Create a storyboard named `Main.storyboard`. Add a table view controller embedded in a navigation controller which is the initial view controller. This first table view controller should be connected to a class called `LocationsTableViewController`.
   * In `viewDidLoad`, set the `tableView` property's accessibility label & identifier to `@"Locations Table"` (this cannot be done in Interface Builder).
-  * Give the table view controller a `LocationsDataStore` property called `store` and use the "shared instance" method to instantiate it.
+  * Give the table view controller a `LocationsDataStore` property called `store` and use the `sharedInstance` method to instantiate it.
   * In storyboard, set the table view's prototype cell type to "right detail". Have the table view use the `textLabel` to show the name of the locations, and the `detailTextLabel` to display the number of trivia it has associated with it.
 
-3. Add a second table view controller named `TriviaTableViewController` accessed by a show segue from a table view cell in the locations table view controller. In `viewDidLoad`, set the `tableView`'s accessibility label & identifier to `@"Trivia Table"`.
-  * Give the view controller a `Location` property called `location`, which should be set with the relevant `Location` object in `LocationsTableViewController`'s `prepareForSegue:sender:` method.
+3. Add a second table view controller named `TriviaTableViewController` accessed by a show segue from a table view cell in the `LocationsTableViewController`. In `viewDidLoad`, set the `tableView`'s accessibility label & identifier to `"Trivia Table"`.
+  * Give the view controller a `Location` property called `location`, which should be set with the relevant `Location` object in `LocationsTableViewController`'s `prepareForSegue` method.
   * Use the `location` property's `trivia` array to load the table view. Each cell should display the `Trivium` object's "content" in the `textLabel`, and the number of "likes" in the `detailTextLabel`.
 
 4. Create a new view controller named `AddLocationViewController` that will be presented modally from the locations table view controller. 
-  * Add three text fields for the name, latitude, and longitude. Set their accessibility labels & identifiers to `@"nameField"`, `@"latitudeField`, and `@"longitudeField"` respectively.
-  * Add two buttons, one to "cancel" adding a location, and one to "save" a new location with the information entered in the text fields. Set their accessibility labels & identifiers to `@"cancelButton"` and `@"saveButton"` respectively.
+  * Add three text fields for the name, latitude, and longitude. Set their accessibility labels & identifiers to `"nameField"`, `"latitudeField`, and `"longitudeField"` respectively.
+  * Add two buttons, one to "cancel" adding a location, and one to "save" a new location with the information entered in the text fields. Set their accessibility labels & identifiers to `@"cancelButton"` and `"saveButton"` respectively.
   * When the "cancel" button is tapped, dismiss the view controller.
   * When the "submit" button is tapped, use the information in the text fields to create new a instance of `Location` and add it the the data store's `locations` array. Then dismiss the view controller.
 
-5. To access this new view controller, add a bar button item to the navigation bar in the location table view's storyboard canvas. Set the style to "add" so it shows a `+` sign. In the `LocationsTableViewController`'s `viewDidLoad` method, set this new button's accessibility label & identifier to `@"addButton"`. You can access it as a property via `self.navigationItem.rightBarButtonItem` and set the string properties from there.
-  * Create a modal segue between this add button and the `AddLocationViewController`. Now that you have two segues, you'll need to detect which segue has been activated in the `prepareForSegue:` method — only one of the destination view controllers has a `location` property that can be set.
+5. To access this new view controller, add a bar button item to the navigation bar in the location table view's storyboard canvas. Set the style to "add" so it shows a `+` sign. In the `LocationsTableViewController`'s `viewDidLoad` method, set this new button's accessibility label & identifier to `"addButton"`. You can access it as a property via `self.navigationItem.rightBarButtonItem` and set the string properties from there.
+  * Create a modal segue between this add button and the `AddLocationViewController`. Now that you have two segues, you'll need to detect which segue has been activated in the `prepareForSegue:` method — only one of the destination view controllers has a `Location` property that can be set.
 
 6. Use the iOS Simulator to test your add-location view controller. You may notice that the new location doesn't appear in the locations table view, even though the data has been added. How can you get the table view to reload itself?
 
-7. Create another view controller named `AddTriviaTableViewController` to be presented modally from the the trivia table view controller. It will need one text field, a cancel button, and a save button. Set their accessibility labels & identifiers to `@"Trivium Text Field"`, `@"Cancel Button"`, and `@"Save Button"` respectively.
+7. Create another view controller named `AddTriviaViewController` to be presented modally from the the trivia table view controller. It will need one text field, a cancel button, and a save button. Set their accessibility labels & identifiers to `"Trivium Text Field"`, `"Cancel Button"`, and `"Save Button"` respectively.
   * When the cancel button is tapped, dismiss the view controller.
   * When the submit button is tapped, add use the text field to create a new `Trivium` object with zero likes. Add the this new trivium to the relevant `Location` object that was passed to the `TriviaTableViewController`. Then dismiss the view controller.
 
-8. To access this last view controller, add a bar button to the navigation bar in the trivia table view's storyboard canvas. Set the style to "add" so it shows a `+` sign. In the `TriviaTableViewController`'s `viewDidLoad` method, set this new button's accessibility label & identifier to `@"Add Trivia Button"`.  You can access this it as a property via `self.navigationItem.rightBarButtonItem` and set the string properties from there.
+8. To access this last view controller, add a bar button to the navigation bar in the trivia table view's storyboard canvas. Set the style to "add" so it shows a `+` sign. In the `TriviaTableViewController`'s `viewDidLoad` method, set this new button's accessibility label & identifier to `"Add Trivia Button"`.  You can access this it as a property via `self.navigationItem.rightBarButtonItem` and set the string properties from there.
   * Create a modal segue between the add button and the `AddTriviaViewController`.
 
 9. Use the iOS Simulator to test your add-trivia view controller. Does the new trivium show up in the `TriviaTableViewController`?

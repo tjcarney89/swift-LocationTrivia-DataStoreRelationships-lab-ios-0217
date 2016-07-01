@@ -34,3 +34,6 @@ final class LocationsDataStore {
         self.locations.appendContentsOf([bowlingGreen, empireState, ladyLiberty])
     }
 }
+
+
+let newDataStore = LocationsDataStore.sharedInstance
