@@ -54,10 +54,10 @@ This lab already has these steps set up for you. Take a moment to look over the 
 
 ## Instructions
 
-1. The previously-used `Location` and `Trivium` data models have been provided for you. Set up the `LocationsDataStore` class to be a singleton class. It should have one property, an `Array` called `Locations`. Populate the `Locations` array with the starting data provided at the end of this readme in the `generateStartingLocationsData` method.
+1. The previously-used `Location` and `Trivium` data models have been provided for you. Set up the `LocationsDataStore` class to be a singleton class. It should have one property, an `Array` called `Locations`. From the `sharedInstance` initializer, populate the `Locations` array with the starting data by using the `generateStartingLocationsData` method provided at the end of this readme.
 
 2. Create a storyboard named `Main.storyboard`. Add a table view controller embedded in a navigation controller which is the initial view controller. This first table view controller should be connected to a class called `LocationsTableViewController`.
-  * In `viewDidLoad`, set the `tableView` property's accessibility label & identifier to `@"Locations Table"` (this cannot be done in Interface Builder).
+  * In `viewDidLoad`, set the `tableView` property's accessibility label & identifier to `"Locations Table"` (this cannot be done in Interface Builder).
   * Give the table view controller a `LocationsDataStore` property called `store` and use the `sharedInstance` method to instantiate it.
   * In storyboard, set the table view's prototype cell type to "right detail". Have the table view use the `textLabel` to show the name of the locations, and the `detailTextLabel` to display the number of trivia it has associated with it.
 
@@ -67,7 +67,7 @@ This lab already has these steps set up for you. Take a moment to look over the 
 
 4. Create a new view controller named `AddLocationViewController` that will be presented modally from the locations table view controller. 
   * Add three text fields for the name, latitude, and longitude. Set their accessibility labels & identifiers to `"nameField"`, `"latitudeField`, and `"longitudeField"` respectively.
-  * Add two buttons, one to "cancel" adding a location, and one to "save" a new location with the information entered in the text fields. Set their accessibility labels & identifiers to `@"cancelButton"` and `"saveButton"` respectively.
+  * Add two buttons, one to "cancel" adding a location, and one to "save" a new location with the information entered in the text fields. Set their accessibility labels & identifiers to `"cancelButton"` and `"saveButton"` respectively.
   * When the "cancel" button is tapped, dismiss the view controller.
   * When the "submit" button is tapped, use the information in the text fields to create new a instance of `Location` and add it the the data store's `locations` array. Then dismiss the view controller.
 

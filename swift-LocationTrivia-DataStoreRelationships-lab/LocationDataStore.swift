@@ -10,7 +10,9 @@ import Foundation
 
 final class LocationsDataStore {
     static let sharedInstance = LocationsDataStore()
-    private init() {}
+    private init() {
+        generateStartingLocationsData()
+    }
     
     var locations: [Location] = []
     
