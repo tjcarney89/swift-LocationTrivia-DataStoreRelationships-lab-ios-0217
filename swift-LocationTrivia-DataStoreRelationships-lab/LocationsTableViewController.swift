@@ -17,25 +17,34 @@ class LocationsTableViewController: UITableViewController {
 
         self.tableView.accessibilityLabel = "Locations Table"
         self.tableView.accessibilityIdentifier = "Locations Table"
-//        self.navigationItem.rightBarButtonItem.accessibilityLabel = "addButton"
-//        self.navigationItem.rightBarButtonItem.accessibilityIdentifier = "addButton"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if let rightBarButtonItem = self.navigationItem.rightBarButtonItem {
+                    rightBarButtonItem.accessibilityLabel = "addButton"
+                    rightBarButtonItem.accessibilityIdentifier = "addButton"
+        }
     }
 
     // MARK: - Table view data source
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.tableView.reloadData()
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.store.locations.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("RightDetail", forIndexPath: indexPath)
+        
+        let currentLocation = self.store.locations[indexPath.row];
+        
+        if let textLabel = cell.textLabel {
+            textLabel.text = currentLocation.name
+        }
+        if let detailTextLabel = cell.detailTextLabel {
+            detailTextLabel.text = String.localizedStringWithFormat("%lu", currentLocation.trivia.count)
+        }
         
         return cell
     }
@@ -43,10 +52,15 @@ class LocationsTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier != "addLocation" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let location = self.store.locations[indexPath.row]
+                if let triviaTVC: TriviaTableViewController = segue.destinationViewController as? TriviaTableViewController {
+                    triviaTVC.location = location
+                }
+            }
+        }
     }
 
 }
