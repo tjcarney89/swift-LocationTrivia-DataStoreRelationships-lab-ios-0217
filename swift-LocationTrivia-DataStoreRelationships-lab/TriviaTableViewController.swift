@@ -10,7 +10,7 @@ import UIKit
 
 class TriviaTableViewController: UITableViewController {
     
-    var location: Location
+    var location: Location = Location.init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
