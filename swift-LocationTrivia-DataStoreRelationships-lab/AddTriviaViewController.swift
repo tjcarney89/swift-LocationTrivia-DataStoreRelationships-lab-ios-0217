@@ -9,27 +9,29 @@
 import UIKit
 
 class AddTriviaViewController: UIViewController {
+    
+    var location = Location.init()
+    
+    @IBOutlet weak var triviaTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func saveButtonTapped(sender: AnyObject) {
+        if let text = self.triviaTextField.text {
+            let trivium = Trivium.init(content: text, likes: 0)
+            self.location.trivia.append(trivium)
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelButtonTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
-    */
-
+    
 }
