@@ -24,8 +24,9 @@ class TriviaTableViewController: UITableViewController {
         }
     }
 
+    // MARK: - Table view data source
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.location.trivia.count
     }
 
@@ -38,12 +39,14 @@ class TriviaTableViewController: UITableViewController {
             textLabel.text = currentTrivia.content
         }
         if let detailTextLabel = cell.detailTextLabel {
-            detailTextLabel.text = String.localizedStringWithFormat("%lu", currentTrivia.likes)
+            detailTextLabel.text = String(format: "%lu", currentTrivia.likes)
         }
         
         return cell
     }
 
+    // MARK: - Navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addTrivia" {
             if let addTriviaVC: AddTriviaViewController = segue.destinationViewController as? AddTriviaViewController {

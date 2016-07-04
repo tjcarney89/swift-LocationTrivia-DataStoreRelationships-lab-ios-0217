@@ -202,6 +202,7 @@
 				TargetAttributes = {
 					1B4006B51D25974A008F814D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = KXY9EDFTF5;
 					};
 					1B4006C91D25974A008F814D = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -485,10 +486,13 @@
 			baseConfigurationReference = 487BFB0E7D07A094E0DBCAF6 /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "swift-LocationTrivia-DataStoreRelationships-lab/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FIS.swift-LocationTrivia-DataStoreRelationships-lab";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -497,10 +501,13 @@
 			baseConfigurationReference = 0CA98FEC4C1E7F3D4C9BC36A /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "swift-LocationTrivia-DataStoreRelationships-lab/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FIS.swift-LocationTrivia-DataStoreRelationships-lab";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -49,7 +49,6 @@ class LocationsTableViewController: UITableViewController {
         return cell
     }
 
-    
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
