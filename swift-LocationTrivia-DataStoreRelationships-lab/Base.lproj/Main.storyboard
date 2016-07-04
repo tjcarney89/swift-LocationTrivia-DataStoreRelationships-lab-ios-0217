@@ -102,26 +102,27 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelButtonTapped:" destination="Dom-NK-sD9" eventType="touchUpInside" id="ZSs-Ak-ftT"/>
+                                    <action selector="cancelButtonTapped:" destination="Dom-NK-sD9" eventType="touchUpInside" id="aIj-q4-xXG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZH-yj-QcL">
                                 <rect key="frame" x="16" y="191" width="288" height="22"/>
                                 <state key="normal" title="Use Current Location"/>
                                 <connections>
-                                    <action selector="useCurrentLocation:" destination="Dom-NK-sD9" eventType="touchUpInside" id="OhB-lk-WAg"/>
+                                    <action selector="useCurrentLocation:" destination="Dom-NK-sD9" eventType="touchUpInside" id="012-N1-V0E"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="Apu-Sa-2Z9" id="eaS-67-tcu"/>
+                        <outlet property="cancelButton" destination="Apu-Sa-2Z9" id="zMc-0g-Jtw"/>
                         <outlet property="latitudeField" destination="rCh-p0-95b" id="RJ3-RV-Run"/>
-                        <outlet property="longitudeField" destination="4V2-b3-c2F" id="FSz-5i-5hR"/>
-                        <outlet property="nameField" destination="5a8-ws-1Dw" id="kb6-56-yhZ"/>
-                        <outlet property="submitButton" destination="6d5-9p-VH7" id="Ld1-ck-ahi"/>
-                        <outlet property="useCurrentLocationButton" destination="cZH-yj-QcL" id="lKj-wb-11B"/>
+                        <outlet property="latitudeFielkd" destination="rCh-p0-95b" id="2lf-Zj-ngy"/>
+                        <outlet property="longitudeField" destination="4V2-b3-c2F" id="0SH-RR-x3T"/>
+                        <outlet property="nameField" destination="5a8-ws-1Dw" id="rw5-iZ-PyH"/>
+                        <outlet property="submitButton" destination="6d5-9p-VH7" id="am8-4w-ehp"/>
+                        <outlet property="useCurrentLocationButton" destination="cZH-yj-QcL" id="0U9-wo-rrF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cj1-dy-OyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
