@@ -11,9 +11,7 @@
 
 From time to time, we may want one instance of a class (and whatever data it holds onto) to be accessed by many other objects in your program. This is very useful for organizing your application's data into one place—hence the designation in this case of "Data Store." One way to accomplish this is with a **shared instance** of that class. A shared instance is typically accessed by a class method which creates only one instance over the lifetime of the application. Any and all calls to that class method return the one instance already instantiated. You'll often hear this referred to as a "singleton." 
 
-The `dispatch_once` function from Grand Central Dispatch (GCD) is what permits this behavior. It's kind of like a punch card that reads 'admit one.' It retains all of its identifying information, but won't permit the application to run the block argument more than once. In the current case, that means only instantiating the shared instance one time. If we were to take the Objective-C code for creating a singleton and translate it to Swift, it would look like this:
-
-Use the following code to create a shared instance in Swift:
+The following code is used to create a singleton in Swift:
 
 ```swift
 final class DataStore {
@@ -22,7 +20,7 @@ final class DataStore {
 }
 ```
 
-Here we create a new class called `DataStore`. By marking the class as `final`, we ensure it can't be modified or subclassed. Next, we create a constant called `sharedInstance` and assign it an instance of `DataStore`. The `()` following `DataStore` automatically calls the initializer on the following line. Setting `sharedInstance` as `static` prevents its methods from being overridden. Declaring it as a constant by using `let` guarantees that only this particular instance of `DataStore` will ever occupy `sharedInstance`.
+Here we create a instance of a class called `DataStore`. By marking the class as `final`, we ensure it can't be modified or subclassed. Next, we create a constant called `sharedInstance` and assign it an instance of `DataStore`. The `()` following `DataStore` automatically calls the initializer on the following line. Setting `sharedInstance` as `static` prevents its methods from being overridden. Declaring it as a constant by using `let` guarantees that only this particular instance of `DataStore` will ever occupy `sharedInstance`, no matter how many times `sharedInstance` is called throughout the life of the application.
 
 When an instance of a class is created with `let`, its variable properties can still be changed, even though the instance itself is fixed.
 
@@ -54,7 +52,7 @@ This lab already has these steps set up for you. Take a moment to look over the 
 
 ## Instructions
 
-1. The previously-used `Location` and `Trivium` data models have been provided for you. Set up the `LocationsDataStore` class to be a singleton class. It should have one property, an `Array` called `Locations`. From the `sharedInstance` initializer, populate the `Locations` array with the starting data by using the `generateStartingLocationsData` method provided at the end of this readme.
+1. The previously-used `Location` and `Trivium` data models have been provided for you. Set up the `LocationsDataStore` class to be a singleton class using the code provided above. It should have one property, an `Array` called `Locations`. From the `sharedInstance` initializer, populate the `Locations` array with the starting data by using the `generateStartingLocationsData` method provided at the end of this readme.
 
 2. Create a storyboard named `Main.storyboard`. Add a table view controller embedded in a navigation controller which is the initial view controller. This first table view controller should be connected to a class called `LocationsTableViewController`.
   * In `viewDidLoad`, set the `tableView` property's accessibility label & identifier to `"Locations Table"` (this cannot be done in Interface Builder).
@@ -112,5 +110,3 @@ func generateStartingLocationsData() {
 ## Advanced
 
 Add functionality to get the users actual location. Beware that significant changes to `CLLocation` were made with iOS 8, so resources older than September 2014 might be incorrect.
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/locationTrivia-DataStoreRelationships' title='Location Trivia - Data Store Relationships'>Location Trivia - Data Store Relationships</a> on Learn.co and start learning to code for free.</p>
