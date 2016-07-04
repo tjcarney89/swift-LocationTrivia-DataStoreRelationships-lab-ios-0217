@@ -10,7 +10,7 @@ import Foundation
 
 
 class Trivium {
-    
+
     var likes: Int = 0
     var content: String
     

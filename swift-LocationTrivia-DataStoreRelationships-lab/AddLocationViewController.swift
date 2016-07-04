@@ -96,5 +96,4 @@ class AddLocationViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
 }

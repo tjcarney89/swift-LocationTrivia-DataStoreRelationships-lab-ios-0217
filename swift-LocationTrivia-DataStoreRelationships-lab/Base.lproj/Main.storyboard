@@ -118,7 +118,6 @@
                     <connections>
                         <outlet property="cancelButton" destination="Apu-Sa-2Z9" id="zMc-0g-Jtw"/>
                         <outlet property="latitudeField" destination="rCh-p0-95b" id="RJ3-RV-Run"/>
-                        <outlet property="latitudeFielkd" destination="rCh-p0-95b" id="2lf-Zj-ngy"/>
                         <outlet property="longitudeField" destination="4V2-b3-c2F" id="0SH-RR-x3T"/>
                         <outlet property="nameField" destination="5a8-ws-1Dw" id="rw5-iZ-PyH"/>
                         <outlet property="submitButton" destination="6d5-9p-VH7" id="am8-4w-ehp"/>
@@ -232,7 +231,6 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="e8C-qM-RUS" id="hMM-6p-b1j"/>
-                        <outlet property="cancelButtonTapped" destination="e8C-qM-RUS" id="FAD-rz-fay"/>
                         <outlet property="saveButton" destination="tDq-wH-0xE" id="Pc2-Rz-edi"/>
                         <outlet property="triviaTextField" destination="EQD-Ag-6Mr" id="jTa-1V-2YS"/>
                     </connections>

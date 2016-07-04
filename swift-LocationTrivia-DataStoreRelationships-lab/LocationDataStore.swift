@@ -9,6 +9,7 @@
 import Foundation
 
 final class LocationsDataStore {
+    
     static let sharedInstance = LocationsDataStore()
     private init() {
         generateStartingLocationsData()
@@ -36,6 +37,3 @@ final class LocationsDataStore {
         self.locations.appendContentsOf([bowlingGreen, empireState, ladyLiberty])
     }
 }
-
-
-let newDataStore = LocationsDataStore.sharedInstance

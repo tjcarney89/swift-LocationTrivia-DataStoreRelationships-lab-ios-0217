@@ -23,6 +23,11 @@ class TriviaTableViewController: UITableViewController {
             rightBarButtonItem.accessibilityLabel = "Add Trivia Button"
         }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
@@ -54,5 +59,4 @@ class TriviaTableViewController: UITableViewController {
             }
         }
     }
-    
 }

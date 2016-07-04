@@ -31,5 +31,4 @@ class AddTriviaViewController: UIViewController {
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
 }

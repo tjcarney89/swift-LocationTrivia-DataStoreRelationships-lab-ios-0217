@@ -9,7 +9,7 @@
 import UIKit
 
 class LocationsTableViewController: UITableViewController {
-
+    
     let store = LocationsDataStore.sharedInstance
     
     override func viewDidLoad() {
@@ -22,13 +22,13 @@ class LocationsTableViewController: UITableViewController {
                     rightBarButtonItem.accessibilityIdentifier = "addButton"
         }
     }
-
-    // MARK: - Table view data source
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         self.tableView.reloadData()
     }
+    
+    // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.store.locations.count
@@ -61,5 +61,4 @@ class LocationsTableViewController: UITableViewController {
             }
         }
     }
-
 }
