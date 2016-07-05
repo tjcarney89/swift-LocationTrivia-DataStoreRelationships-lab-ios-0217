@@ -61,5 +61,4 @@ class Location {
          return triviumByLikes[0];
          */
     }
-    
 }
