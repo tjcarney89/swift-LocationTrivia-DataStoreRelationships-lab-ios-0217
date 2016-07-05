@@ -11,7 +11,6 @@
 		1B4006BF1D25974A008F814D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4006BD1D25974A008F814D /* Main.storyboard */; };
 		1B4006C11D25974A008F814D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4006C01D25974A008F814D /* Assets.xcassets */; };
 		1B4006C41D25974A008F814D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4006C21D25974A008F814D /* LaunchScreen.storyboard */; };
-		1B4006CF1D25974A008F814D /* swift_LocationTrivia_DataStoreRelationships_labTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006CE1D25974A008F814D /* swift_LocationTrivia_DataStoreRelationships_labTests.swift */; };
 		1B4006DC1D259895008F814D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006D91D259895008F814D /* Location.swift */; };
 		1B4006DD1D259895008F814D /* LocationDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006DA1D259895008F814D /* LocationDataStore.swift */; };
 		1B4006DE1D259895008F814D /* Trivium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006DB1D259895008F814D /* Trivium.swift */; };
@@ -19,8 +18,6 @@
 		1B4006EA1D26EDF5008F814D /* TriviaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006E91D26EDF5008F814D /* TriviaTableViewController.swift */; };
 		1B4006EC1D26EE95008F814D /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006EB1D26EE95008F814D /* AddLocationViewController.swift */; };
 		1B4006F01D26EED5008F814D /* AddTriviaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006EF1D26EED5008F814D /* AddTriviaViewController.swift */; };
-		1BE9F76B1D2C042900B8D6A6 /* swift_LocationTrivia_DataStoreRelationships_lab_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE9F76A1D2C042900B8D6A6 /* swift_LocationTrivia_DataStoreRelationships_lab_UnitTests.swift */; };
-		1BE9F7731D2C061800B8D6A6 /* swift_LocationTrivia_DataStoreRelationships_labUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE9F7721D2C061800B8D6A6 /* swift_LocationTrivia_DataStoreRelationships_labUITests.swift */; };
 		3D5B53CA8D7389813771FFB7 /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B377A86E7BBC03AEAE2C0FC /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework */; };
 		3E05099B8F7D5ACB7F89C014 /* Pods_swift_LocationTrivia_DataStoreRelationships_labTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599E9E96BAA8225332DF9C54 /* Pods_swift_LocationTrivia_DataStoreRelationships_labTests.framework */; };
 		E1084400752DAA4D75D7E3A3 /* Pods_swift_LocationTrivia_DataStoreRelationships_labUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733C4837168CAA9E232B63EC /* Pods_swift_LocationTrivia_DataStoreRelationships_labUITests.framework */; };
@@ -52,8 +49,6 @@
 		1B4006C31D25974A008F814D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B4006C51D25974A008F814D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B4006CA1D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-labTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-LocationTrivia-DataStoreRelationships-labTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B4006CE1D25974A008F814D /* swift_LocationTrivia_DataStoreRelationships_labTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_LocationTrivia_DataStoreRelationships_labTests.swift; sourceTree = "<group>"; };
-		1B4006D01D25974A008F814D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B4006D91D259895008F814D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1B4006DA1D259895008F814D /* LocationDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataStore.swift; sourceTree = "<group>"; };
 		1B4006DB1D259895008F814D /* Trivium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trivium.swift; sourceTree = "<group>"; };
@@ -61,10 +56,7 @@
 		1B4006E91D26EDF5008F814D /* TriviaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriviaTableViewController.swift; sourceTree = "<group>"; };
 		1B4006EB1D26EE95008F814D /* AddLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		1B4006EF1D26EED5008F814D /* AddTriviaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTriviaViewController.swift; sourceTree = "<group>"; };
-		1BE9F76A1D2C042900B8D6A6 /* swift_LocationTrivia_DataStoreRelationships_lab_UnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swift_LocationTrivia_DataStoreRelationships_lab_UnitTests.swift; sourceTree = "<group>"; };
 		1BE9F7701D2C061800B8D6A6 /* swift-LocationTrivia-DataStoreRelationships-labUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-LocationTrivia-DataStoreRelationships-labUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BE9F7721D2C061800B8D6A6 /* swift_LocationTrivia_DataStoreRelationships_labUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_LocationTrivia_DataStoreRelationships_labUITests.swift; sourceTree = "<group>"; };
-		1BE9F7741D2C061800B8D6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B377A86E7BBC03AEAE2C0FC /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43442952DC7936394FA94943 /* Pods-swift-LocationTrivia-DataStoreRelationships-labUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-LocationTrivia-DataStoreRelationships-labUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-labUITests/Pods-swift-LocationTrivia-DataStoreRelationships-labUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		487BFB0E7D07A094E0DBCAF6 /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-lab/Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,8 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				1B4006B81D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-lab */,
-				1B4006CD1D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-labTests */,
-				1BE9F7711D2C061800B8D6A6 /* swift-LocationTrivia-DataStoreRelationships-labUITests */,
 				1B4006B71D25974A008F814D /* Products */,
 				B7688ED93F973E8852849DA8 /* Pods */,
 				AD21407FFBBBED557B32E60C /* Frameworks */,
@@ -142,25 +132,6 @@
 				1B4006C51D25974A008F814D /* Info.plist */,
 			);
 			path = "swift-LocationTrivia-DataStoreRelationships-lab";
-			sourceTree = "<group>";
-		};
-		1B4006CD1D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-labTests */ = {
-			isa = PBXGroup;
-			children = (
-				1B4006CE1D25974A008F814D /* swift_LocationTrivia_DataStoreRelationships_labTests.swift */,
-				1BE9F76A1D2C042900B8D6A6 /* swift_LocationTrivia_DataStoreRelationships_lab_UnitTests.swift */,
-				1B4006D01D25974A008F814D /* Info.plist */,
-			);
-			path = "swift-LocationTrivia-DataStoreRelationships-labTests";
-			sourceTree = "<group>";
-		};
-		1BE9F7711D2C061800B8D6A6 /* swift-LocationTrivia-DataStoreRelationships-labUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1BE9F7721D2C061800B8D6A6 /* swift_LocationTrivia_DataStoreRelationships_labUITests.swift */,
-				1BE9F7741D2C061800B8D6A6 /* Info.plist */,
-			);
-			path = "swift-LocationTrivia-DataStoreRelationships-labUITests";
 			sourceTree = "<group>";
 		};
 		AD21407FFBBBED557B32E60C /* Frameworks */ = {
@@ -464,8 +435,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B4006CF1D25974A008F814D /* swift_LocationTrivia_DataStoreRelationships_labTests.swift in Sources */,
-				1BE9F76B1D2C042900B8D6A6 /* swift_LocationTrivia_DataStoreRelationships_lab_UnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BE9F7731D2C061800B8D6A6 /* swift_LocationTrivia_DataStoreRelationships_labUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
