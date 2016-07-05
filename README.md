@@ -112,4 +112,5 @@ Add functionality to get the users actual location. Beware that significant chan
 ## End Result
 
 Your final product should function like this:
+
 ![Location Trivia Data Store Relationships Demo](https://s3.amazonaws.com/learn-verified/swift-LocationTrivia-DataStoreRelationships-lab-Demo.gif)
