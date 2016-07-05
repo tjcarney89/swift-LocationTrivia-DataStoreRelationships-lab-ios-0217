@@ -8,16 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1B4006BA1D25974A008F814D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006B91D25974A008F814D /* AppDelegate.swift */; };
-		1B4006BF1D25974A008F814D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4006BD1D25974A008F814D /* Main.storyboard */; };
 		1B4006C11D25974A008F814D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4006C01D25974A008F814D /* Assets.xcassets */; };
 		1B4006C41D25974A008F814D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4006C21D25974A008F814D /* LaunchScreen.storyboard */; };
 		1B4006DC1D259895008F814D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006D91D259895008F814D /* Location.swift */; };
-		1B4006DD1D259895008F814D /* LocationDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006DA1D259895008F814D /* LocationDataStore.swift */; };
 		1B4006DE1D259895008F814D /* Trivium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006DB1D259895008F814D /* Trivium.swift */; };
-		1B4006E81D26EDCA008F814D /* LocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006E71D26EDCA008F814D /* LocationsTableViewController.swift */; };
-		1B4006EA1D26EDF5008F814D /* TriviaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006E91D26EDF5008F814D /* TriviaTableViewController.swift */; };
-		1B4006EC1D26EE95008F814D /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006EB1D26EE95008F814D /* AddLocationViewController.swift */; };
-		1B4006F01D26EED5008F814D /* AddTriviaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4006EF1D26EED5008F814D /* AddTriviaViewController.swift */; };
 		3D5B53CA8D7389813771FFB7 /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B377A86E7BBC03AEAE2C0FC /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,17 +19,11 @@
 		0CA98FEC4C1E7F3D4C9BC36A /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-LocationTrivia-DataStoreRelationships-lab.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-lab/Pods-swift-LocationTrivia-DataStoreRelationships-lab.release.xcconfig"; sourceTree = "<group>"; };
 		1B4006B61D25974A008F814D /* swift-LocationTrivia-DataStoreRelationships-lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-LocationTrivia-DataStoreRelationships-lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B4006B91D25974A008F814D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B4006BE1D25974A008F814D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B4006C01D25974A008F814D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B4006C31D25974A008F814D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B4006C51D25974A008F814D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B4006D91D259895008F814D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		1B4006DA1D259895008F814D /* LocationDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataStore.swift; sourceTree = "<group>"; };
 		1B4006DB1D259895008F814D /* Trivium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trivium.swift; sourceTree = "<group>"; };
-		1B4006E71D26EDCA008F814D /* LocationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsTableViewController.swift; sourceTree = "<group>"; };
-		1B4006E91D26EDF5008F814D /* TriviaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriviaTableViewController.swift; sourceTree = "<group>"; };
-		1B4006EB1D26EE95008F814D /* AddLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
-		1B4006EF1D26EED5008F814D /* AddTriviaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTriviaViewController.swift; sourceTree = "<group>"; };
 		3B377A86E7BBC03AEAE2C0FC /* Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_LocationTrivia_DataStoreRelationships_lab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43442952DC7936394FA94943 /* Pods-swift-LocationTrivia-DataStoreRelationships-labUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-LocationTrivia-DataStoreRelationships-labUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-labUITests/Pods-swift-LocationTrivia-DataStoreRelationships-labUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		487BFB0E7D07A094E0DBCAF6 /* Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-LocationTrivia-DataStoreRelationships-lab/Pods-swift-LocationTrivia-DataStoreRelationships-lab.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,12 +70,6 @@
 				1B4006B91D25974A008F814D /* AppDelegate.swift */,
 				1B4006D91D259895008F814D /* Location.swift */,
 				1B4006DB1D259895008F814D /* Trivium.swift */,
-				1B4006DA1D259895008F814D /* LocationDataStore.swift */,
-				1B4006E71D26EDCA008F814D /* LocationsTableViewController.swift */,
-				1B4006E91D26EDF5008F814D /* TriviaTableViewController.swift */,
-				1B4006EB1D26EE95008F814D /* AddLocationViewController.swift */,
-				1B4006EF1D26EED5008F814D /* AddTriviaViewController.swift */,
-				1B4006BD1D25974A008F814D /* Main.storyboard */,
 				1B4006C01D25974A008F814D /* Assets.xcassets */,
 				1B4006C21D25974A008F814D /* LaunchScreen.storyboard */,
 				1B4006C51D25974A008F814D /* Info.plist */,
@@ -182,7 +164,6 @@
 			files = (
 				1B4006C41D25974A008F814D /* LaunchScreen.storyboard in Resources */,
 				1B4006C11D25974A008F814D /* Assets.xcassets in Resources */,
-				1B4006BF1D25974A008F814D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,28 +222,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B4006EA1D26EDF5008F814D /* TriviaTableViewController.swift in Sources */,
-				1B4006E81D26EDCA008F814D /* LocationsTableViewController.swift in Sources */,
 				1B4006DE1D259895008F814D /* Trivium.swift in Sources */,
-				1B4006EC1D26EE95008F814D /* AddLocationViewController.swift in Sources */,
 				1B4006DC1D259895008F814D /* Location.swift in Sources */,
-				1B4006DD1D259895008F814D /* LocationDataStore.swift in Sources */,
 				1B4006BA1D25974A008F814D /* AppDelegate.swift in Sources */,
-				1B4006F01D26EED5008F814D /* AddTriviaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1B4006BD1D25974A008F814D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1B4006BE1D25974A008F814D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1B4006C21D25974A008F814D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
