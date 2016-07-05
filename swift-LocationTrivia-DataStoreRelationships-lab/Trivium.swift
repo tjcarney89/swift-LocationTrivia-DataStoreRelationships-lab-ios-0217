@@ -22,5 +22,4 @@ class Trivium {
         self.content = content
         self.likes = likes
     }
-    
 }
