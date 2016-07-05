@@ -34,6 +34,6 @@ final class LocationsDataStore {
         let trivium3A = Trivium.init(content: "Gift from France", likes: 6)
         ladyLiberty.trivia.append(trivium3A)
         
-        self.locations.appendContentsOf([bowlingGreen, empireState, ladyLiberty])
+        locations.appendContentsOf([bowlingGreen, empireState, ladyLiberty])
     }
 }

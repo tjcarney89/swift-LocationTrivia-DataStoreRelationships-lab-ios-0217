@@ -32,33 +32,24 @@ class Location {
         
         /* solution with substring
          
-         return self.name.substring(to: self.name.index(self.name.startIndex, offsetBy: length))
+         return name.substring(to: name.index(name.startIndex, offsetBy: length))
          
          */
     }
     
     func hasValidData() -> Bool {
-        if self.name.characters.count == 0 {return false}
-        if self.latitude < -90.0 || self.latitude > 90.0 {return false}
-        if self.longitude <= -180.0 || self.longitude > 180.0 {return false}
+        if name.characters.count == 0 {return false}
+        if latitude < -90.0 || latitude > 90.0 {return false}
+        if longitude <= -180.0 || longitude > 180.0 {return false}
         return true
     }
     
     func triviumWithMostLikes() -> Trivium? {
-        if self.trivia.count == 0 {return nil}
-        var triviumWithMostLikes = self.trivia[0]
-        for currentTrivium in self.trivia {
+        if trivia.count == 0 {return nil}
+        var triviumWithMostLikes = trivia[0]
+        for currentTrivium in trivia {
             if triviumWithMostLikes.likes < currentTrivium.likes {triviumWithMostLikes = currentTrivium}
         }
         return triviumWithMostLikes
-        
-        /** solution with NSSortDescriptor
-         
-         NSSortDescriptor *sortByLikesDesc = [NSSortDescriptor sortDescriptorWithKey:@"likes"
-         ascending:NO];
-         NSArray *triviumByLikes = [self.trivia sortedArrayUsingDescriptors:@[sortByLikesDesc]];
-         
-         return triviumByLikes[0];
-         */
     }
 }

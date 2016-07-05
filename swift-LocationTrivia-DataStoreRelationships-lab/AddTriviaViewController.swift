@@ -21,14 +21,14 @@ class AddTriviaViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
-        if let text = self.triviaTextField.text {
+        if let text = triviaTextField.text {
             let trivium = Trivium.init(content: text, likes: 0)
-            self.location.trivia.append(trivium)
-            self.dismissViewControllerAnimated(true, completion: nil)
+            location.trivia.append(trivium)
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

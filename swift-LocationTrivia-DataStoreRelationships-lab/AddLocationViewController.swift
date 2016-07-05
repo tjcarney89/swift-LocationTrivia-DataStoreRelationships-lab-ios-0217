@@ -24,30 +24,30 @@ class AddLocationViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupAccessibilityLabels()
-        self.setupLocationManager()
+        setupAccessibilityLabels()
+        setupLocationManager()
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(true)
-        self.locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
     }
     
     func setupAccessibilityLabels() {
-        self.nameField.accessibilityLabel = "nameField"
-        self.nameField.accessibilityIdentifier = "nameField"
+        nameField.accessibilityLabel = "nameField"
+        nameField.accessibilityIdentifier = "nameField"
         
-        self.latitudeField.accessibilityLabel = "latitudeField"
-        self.latitudeField.accessibilityIdentifier = "latitudeField"
+        latitudeField.accessibilityLabel = "latitudeField"
+        latitudeField.accessibilityIdentifier = "latitudeField"
         
-        self.longitudeField.accessibilityLabel = "longitudeField"
-        self.longitudeField.accessibilityIdentifier = "longitudeField"
+        longitudeField.accessibilityLabel = "longitudeField"
+        longitudeField.accessibilityIdentifier = "longitudeField"
         
-        self.submitButton.accessibilityLabel = "saveButton"
-        self.submitButton.accessibilityIdentifier = "saveButton"
+        submitButton.accessibilityLabel = "saveButton"
+        submitButton.accessibilityIdentifier = "saveButton"
         
-        self.cancelButton.accessibilityLabel = "cancelButton"
-        self.cancelButton.accessibilityIdentifier = "cancelButton"
+        cancelButton.accessibilityLabel = "cancelButton"
+        cancelButton.accessibilityIdentifier = "cancelButton"
     }
     
     
@@ -71,29 +71,29 @@ class AddLocationViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: IBActions
     
     @IBAction func useCurrentLocation(sender: AnyObject) {
-        self.latitudeField.text = String(format: "%f", self.currentLocation.coordinate.latitude)
-        self.longitudeField.text = String(format: "%f", self.currentLocation.coordinate.longitude)
+        latitudeField.text = String(format: "%f", currentLocation.coordinate.latitude)
+        longitudeField.text = String(format: "%f", currentLocation.coordinate.longitude)
     }
     
     @IBAction func submitButtonTapped(sender: AnyObject) {
         var latitude: Float
         var longitude: Float
         
-        if let latitudeText = self.latitudeField.text {
+        if let latitudeText = latitudeField.text {
             latitude = Float(latitudeText)!
-            if let longitudeText = self.longitudeField.text {
+            if let longitudeText = longitudeField.text {
                 longitude = Float(longitudeText)!
-                if let name = self.nameField.text {
+                if let name = nameField.text {
                     let newLocation = Location.init(name: name, latitude: latitude, longitude: longitude)
                     LocationsDataStore.sharedInstance.locations.append(newLocation)
                 }
                 
-                self.dismissViewControllerAnimated(true, completion: nil)
+                dismissViewControllerAnimated(true, completion: nil)
             }
         }
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

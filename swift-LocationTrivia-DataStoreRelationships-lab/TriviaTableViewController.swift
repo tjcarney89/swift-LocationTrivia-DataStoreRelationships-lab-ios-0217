@@ -15,10 +15,10 @@ class TriviaTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tableView.accessibilityIdentifier = "Trivia Table"
-        self.tableView.accessibilityLabel = "Trivia Table"
+        tableView.accessibilityIdentifier = "Trivia Table"
+        tableView.accessibilityLabel = "Trivia Table"
         
-        if let rightBarButtonItem = self.navigationItem.rightBarButtonItem {
+        if let rightBarButtonItem = navigationItem.rightBarButtonItem {
             rightBarButtonItem.accessibilityIdentifier = "Add Trivia Button"
             rightBarButtonItem.accessibilityLabel = "Add Trivia Button"
         }
@@ -26,19 +26,19 @@ class TriviaTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.location.trivia.count
+        return location.trivia.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TriviaCell", forIndexPath: indexPath)
 
-        let currentTrivia = self.location.trivia[indexPath.row]
+        let currentTrivia = location.trivia[indexPath.row]
         
         if let textLabel = cell.textLabel {
             textLabel.text = currentTrivia.content
@@ -55,7 +55,7 @@ class TriviaTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addTrivia" {
             if let addTriviaVC: AddTriviaViewController = segue.destinationViewController as? AddTriviaViewController {
-                addTriviaVC.location = self.location
+                addTriviaVC.location = location
             }
         }
     }

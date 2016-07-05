@@ -15,9 +15,9 @@ class LocationsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tableView.accessibilityLabel = "Locations Table"
-        self.tableView.accessibilityIdentifier = "Locations Table"
-        if let rightBarButtonItem = self.navigationItem.rightBarButtonItem {
+        tableView.accessibilityLabel = "Locations Table"
+        tableView.accessibilityIdentifier = "Locations Table"
+        if let rightBarButtonItem = navigationItem.rightBarButtonItem {
                     rightBarButtonItem.accessibilityLabel = "addButton"
                     rightBarButtonItem.accessibilityIdentifier = "addButton"
         }
@@ -25,13 +25,13 @@ class LocationsTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.store.locations.count
+        return store.locations.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -53,8 +53,8 @@ class LocationsTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier != "addLocation" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let location = self.store.locations[indexPath.row]
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let location = store.locations[indexPath.row]
                 if let triviaTVC: TriviaTableViewController = segue.destinationViewController as? TriviaTableViewController {
                     triviaTVC.location = location
                 }

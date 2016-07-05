@@ -1,5 +1,3 @@
-
-
 # Location Trivia - Data Store Relationships
 
 ## Goals
@@ -9,7 +7,7 @@
 
 ## Review
 
-From time to time, we may want one instance of a class (and whatever data it holds onto) to be accessed by many other objects in your program. This is very useful for organizing your application's data into one place—hence the designation in this case of "Data Store." One way to accomplish this is with a **shared instance** of that class. A shared instance is typically accessed by a class method which creates only one instance over the lifetime of the application. Any and all calls to that class method return the one instance already instantiated. You'll often hear this referred to as a "singleton." 
+From time to time, we may want one instance of a class (and whatever data it holds onto) to be accessed by many other objects in your program. This is very useful for organizing your application's data into one place—hence the designation in this case of "Data Store." One way to accomplish this is with a **shared instance** of that class. A shared instance is typically accessed by a class method which creates only one instance over the lifetime of the application. Any and all calls to that class method return the one instance already instantiated. You'll often hear this referred to as a "singleton."
 
 The following code is used to create a singleton in Swift:
 
@@ -63,7 +61,7 @@ This lab already has these steps set up for you. Take a moment to look over the 
   * Give the view controller a `Location` property called `location`, which should be set with the relevant `Location` object in `LocationsTableViewController`'s `prepareForSegue` method.
   * Use the `location` property's `trivia` array to load the table view. Each cell should display the `Trivium` object's "content" in the `textLabel`, and the number of "likes" in the `detailTextLabel`.
 
-4. Create a new view controller named `AddLocationViewController` that will be presented modally from the locations table view controller. 
+4. Create a new view controller named `AddLocationViewController` that will be presented modally from the locations table view controller.
   * Add three text fields for the name, latitude, and longitude. Set their accessibility labels & identifiers to `"nameField"`, `"latitudeField`, and `"longitudeField"` respectively.
   * Add two buttons, one to "cancel" adding a location, and one to "save" a new location with the information entered in the text fields. Set their accessibility labels & identifiers to `"cancelButton"` and `"saveButton"` respectively.
   * When the "cancel" button is tapped, dismiss the view controller.
@@ -87,22 +85,22 @@ This lab already has these steps set up for you. Take a moment to look over the 
 
 ```swift
 func generateStartingLocationsData() {
-    
+
     let empireState = Location.init(name: "The Empire State Building", latitude: 40.7484, longitude: -73.9857)
     let trivium1A = Trivium.init(content: "1,454 Feet Tall", likes: 4)
     let trivium1B = Trivium.init(content: "Cost $24,718,000 to build", likes: 2)
     empireState.trivia.appendContentsOf([trivium1A, trivium1B])
-    
+
     let bowlingGreen = Location.init(name: "Bowling Green", latitude: 41.3739, longitude: -83.6508)
     let trivium2A = Trivium.init(content: "NYC's oldest park", likes: 8)
     let trivium2B = Trivium.init(content: "Made a park in 1733", likes: 2)
     let trivium2C = Trivium.init(content: "Charging Bull was created in 1989", likes: 0)
     bowlingGreen.trivia.appendContentsOf([trivium2A, trivium2B, trivium2C])
-    
+
     let ladyLiberty = Location.init(name: "Statue Of Liberty", latitude: 40.6892, longitude: -74.0444)
     let trivium3A = Trivium.init(content: "Gift from France", likes: 6)
     ladyLiberty.trivia.append(trivium3A)
-    
+
     self.locations.appendContentsOf([bowlingGreen, empireState, ladyLiberty])
 }
 ```
@@ -110,3 +108,8 @@ func generateStartingLocationsData() {
 ## Advanced
 
 Add functionality to get the users actual location. Beware that significant changes to `CLLocation` were made with iOS 8, so resources older than September 2014 might be incorrect.
+
+## End Result
+
+Your final product should function like this:
+![Location Trivia Data Store Relationships Demo](https://s3.amazonaws.com/learn-verified/swift-LocationTrivia-DataStoreRelationships-lab-Demo.gif)
