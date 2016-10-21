@@ -26,7 +26,7 @@ class Location {
         self.init(name: "", latitude: 0.0 , longitude: 0.0)
     }
     
-    func stringByTruncatingNameToLength(length: Int) -> String {
+    func stringByTruncatingNameToLength(_ length: Int) -> String {
         if length > self.name.characters.count {return self.name}
         return String(self.name.characters.dropLast(self.name.characters.count - length))
         
