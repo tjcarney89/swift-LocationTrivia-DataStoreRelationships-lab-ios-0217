@@ -86,22 +86,22 @@ This lab already has these steps set up for you. Take a moment to look over the 
 ```swift
 func generateStartingLocationsData() {
 
-    let empireState = Location.init(name: "The Empire State Building", latitude: 40.7484, longitude: -73.9857)
-    let trivium1A = Trivium.init(content: "1,454 Feet Tall", likes: 4)
-    let trivium1B = Trivium.init(content: "Cost $24,718,000 to build", likes: 2)
-    empireState.trivia.appendContentsOf([trivium1A, trivium1B])
+    let empireState = Location(name: "The Empire State Building", latitude: 40.7484, longitude: -73.9857)
+    let trivium1A = Trivium(content: "1,454 Feet Tall", likes: 4)
+    let trivium1B = Trivium(content: "Cost $24,718,000 to build", likes: 2)
+    empireState.trivia.append(contentsOf:[trivium1A, trivium1B])
 
-    let bowlingGreen = Location.init(name: "Bowling Green", latitude: 41.3739, longitude: -83.6508)
-    let trivium2A = Trivium.init(content: "NYC's oldest park", likes: 8)
-    let trivium2B = Trivium.init(content: "Made a park in 1733", likes: 2)
-    let trivium2C = Trivium.init(content: "Charging Bull was created in 1989", likes: 0)
-    bowlingGreen.trivia.appendContentsOf([trivium2A, trivium2B, trivium2C])
+    let bowlingGreen = Location(name: "Bowling Green", latitude: 41.3739, longitude: -83.6508)
+    let trivium2A = Trivium(content: "NYC's oldest park", likes: 8)
+    let trivium2B = Trivium(content: "Made a park in 1733", likes: 2)
+    let trivium2C = Trivium(content: "Charging Bull was created in 1989", likes: 0)
+    bowlingGreen.trivia.append(contentsOf:[trivium2A, trivium2B, trivium2C])
 
-    let ladyLiberty = Location.init(name: "Statue Of Liberty", latitude: 40.6892, longitude: -74.0444)
-    let trivium3A = Trivium.init(content: "Gift from France", likes: 6)
+    let ladyLiberty = Location(name: "Statue Of Liberty", latitude: 40.6892, longitude: -74.0444)
+    let trivium3A = Trivium(content: "Gift from France", likes: 6)
     ladyLiberty.trivia.append(trivium3A)
 
-    self.locations.appendContentsOf([bowlingGreen, empireState, ladyLiberty])
+    self.locations.append(contentsOf:[bowlingGreen, empireState, ladyLiberty])
 }
 ```
 
