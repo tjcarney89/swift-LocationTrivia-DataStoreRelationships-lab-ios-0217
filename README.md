@@ -53,16 +53,16 @@ This lab already has these steps set up for you. Take a moment to look over the 
 1. The previously-used `Location` and `Trivium` data models have been provided for you. Set up the `LocationsDataStore` class to be a singleton class using the code provided above. It should have one property, an `Array` called `Locations`. From the `sharedInstance` initializer, populate the `Locations` array with the starting data by using the `generateStartingLocationsData` method provided at the end of this readme.
 
 2. Create a storyboard named `Main.storyboard`. Add a table view controller embedded in a navigation controller which is the initial view controller. This first table view controller should be connected to a class called `LocationsTableViewController`.
-  * In `viewDidLoad`, set the `tableView` property's accessibility label & identifier to `"Locations Table"` (this cannot be done in Interface Builder).
+  * In `viewDidLoad`, set the `tableView` property's accessibility label & accessibility identifier to `"Locations Table"` (this cannot be done in Interface Builder).
   * Give the table view controller a `LocationsDataStore` property called `store` and use the `sharedInstance` method to instantiate it.
   * In storyboard, set the table view's prototype cell type to "right detail". Have the table view use the `textLabel` to show the name of the locations, and the `detailTextLabel` to display the number of trivia it has associated with it.
 
-3. Add a second table view controller named `TriviaTableViewController` accessed by a show segue from a table view cell in the `LocationsTableViewController`. In `viewDidLoad`, set the `tableView`'s accessibility label & identifier to `"Trivia Table"`.
+3. Add a second table view controller named `TriviaTableViewController` accessed by a show segue from a table view cell in the `LocationsTableViewController`. In `viewDidLoad`, set the `tableView`'s accessibility label & accessibility identifier to `"Trivia Table"`.
   * Give the view controller a `Location` property called `location`, which should be set with the relevant `Location` object in `LocationsTableViewController`'s `prepareForSegue` method.
   * Use the `location` property's `trivia` array to load the table view. Each cell should display the `Trivium` object's "content" in the `textLabel`, and the number of "likes" in the `detailTextLabel`.
 
 4. Create a new view controller named `AddLocationViewController` that will be presented modally from the locations table view controller.
-  * Add three text fields for the name, latitude, and longitude. Set their accessibility labels & identifiers to `"nameField"`, `"latitudeField`, and `"longitudeField"` respectively.
+  * Add three text fields for the name, latitude, and longitude. Set their accessibility labels & accessibility identifiers to `"nameField"`, `"latitudeField`, and `"longitudeField"` respectively.
   * Add two buttons, one to "cancel" adding a location, and one to "save" a new location with the information entered in the text fields. Set their accessibility labels & identifiers to `"cancelButton"` and `"saveButton"` respectively.
   * When the "cancel" button is tapped, dismiss the view controller.
   * When the "submit" button is tapped, use the information in the text fields to create new a instance of `Location` and add it the the data store's `locations` array. Then dismiss the view controller.
@@ -72,7 +72,7 @@ This lab already has these steps set up for you. Take a moment to look over the 
 
 6. Use the iOS Simulator to test your add-location view controller. You may notice that the new location doesn't appear in the locations table view, even though the data has been added. How can you get the table view to reload itself?
 
-7. Create another view controller named `AddTriviaViewController` to be presented modally from the the trivia table view controller. It will need one text field, a cancel button, and a save button. Set their accessibility labels & identifiers to `"Trivium Text Field"`, `"Cancel Button"`, and `"Save Button"` respectively.
+7. Create another view controller named `AddTriviaViewController` to be presented modally from the the trivia table view controller. It will need one text field, a cancel button, and a save button. Set their accessibility labels & accessibility identifiers to `"Trivium Text Field"`, `"Cancel Button"`, and `"Save Button"` respectively.
   * When the cancel button is tapped, dismiss the view controller.
   * When the submit button is tapped, add use the text field to create a new `Trivium` object with zero likes. Add the this new trivium to the relevant `Location` object that was passed to the `TriviaTableViewController`. Then dismiss the view controller.
 
